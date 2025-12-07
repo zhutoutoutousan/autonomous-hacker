@@ -1,0 +1,51 @@
+# Social Media Red Team Configuration
+
+# Rate Limiting (requests per second)
+rate_limiting:
+  default: 2
+  bilibili: 1
+  twitter: 2
+  reddit: 2
+
+# User Agent Rotation
+user_agents:
+  enabled: true
+  rotation: true
+
+# Output Settings
+output:
+  format: ["json", "html", "txt"]
+  directory: "./reports"
+  timestamp: true
+
+# Platform Specific Settings
+platforms:
+  bilibili:
+    enabled: true
+    api_endpoint: "https://api.bilibili.com"
+    timeout: 30
+  
+  twitter:
+    enabled: true
+    timeout: 30
+    # Note: Twitter API requires authentication
+  
+  reddit:
+    enabled: true
+    timeout: 30
+
+# Intelligence Gathering Depth
+intelligence:
+  deep_scan: false
+  cross_platform: true
+  timeline_analysis: true
+  sentiment_analysis: true
+  threat_scoring: true
+
+# Retaliation Strategy (Defensive Only)
+strategy:
+  focus: "defensive"
+  include_legal_options: true
+  include_platform_reports: true
+  include_blocking_strategies: true
+
